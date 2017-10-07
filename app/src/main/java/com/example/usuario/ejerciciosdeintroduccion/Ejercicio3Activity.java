@@ -40,7 +40,6 @@ public class Ejercicio3Activity extends AppCompatActivity implements View.OnClic
         comenzar = (Button) findViewById(R.id.btnComenzar);
         contador = (TextView) findViewById(R.id.txvContador);
         tiempo = (TextView) findViewById(R.id.txvTiempo);
-        tiempo.setText(String.format("%.2f",0.0));
         mas.setOnClickListener(this);
         menos.setOnClickListener(this);
         comenzar.setOnClickListener(this);
@@ -54,14 +53,14 @@ public class Ejercicio3Activity extends AppCompatActivity implements View.OnClic
         if (view == mas)
         {
             if (medicion < 10) {
-                tiempo.setText(String.format("%.2f", ++medicion));
+                tiempo.setText(String.valueOf(++medicion));
             }
         }
 
         if (view == menos)
         {
             if (medicion > 0)
-                tiempo.setText(String.format("%.2f", --medicion));
+                tiempo.setText(String.valueOf( --medicion));
         }
 
         if (view == comenzar)
@@ -96,7 +95,7 @@ public class Ejercicio3Activity extends AppCompatActivity implements View.OnClic
         public void onFinish()
         {
             contador.setText(String.valueOf(++contadorCafes));
-            tiempo.setText("0.00");
+            tiempo.setText("0.0");
             mp.start();
             if (contadorCafes == 10)
             {
