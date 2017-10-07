@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.usuario.ejerciciosdeintroduccion.MainActivity">
+
+    <Button
+        android:id="@+id/btnEjercicio1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnEjercicio1"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="135dp"
+        android:layout_above="@+id/btnEjercicio2"
+        android:layout_alignLeft="@+id/btnEjercicio2"
+        android:layout_alignStart="@+id/btnEjercicio2" />
+
+    <Button
+        android:id="@+id/btnEjercicio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnEjercicio2"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="183dp"
+        android:layout_above="@+id/btnEjercicio3"
+        android:layout_alignLeft="@+id/btnEjercicio3"
+        android:layout_alignStart="@+id/btnEjercicio3" />
+
+    <Button
+        android:id="@+id/btnEjercicio3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnEjercicio3"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="231dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/btnEjercicio4"
+        android:layout_alignStart="@+id/btnEjercicio4" />
+
+    <Button
+        android:id="@+id/btnEjercicio4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnEjercicio4"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="279dp"
+        android:layout_below="@+id/btnEjercicio3"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

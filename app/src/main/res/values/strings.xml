@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">EjerciciosDeIntroduccion</string>
+    <string name="btnEjercicio1">Ejercicio 1</string>
+    <string name="btnEjercicio2">Ejercicio 2</string>
+    <string name="btnEjercicio3">Ejercicio 3</string>
+    <string name="btnEjercicio4">Ejercicio 4</string>
+    <string name="title_activity_ejercicio1">Ejercicio1Activity</string>
+    <string name="title_activity_ejercicio2">Ejercicio2Activity</string>
+    <string name="title_activity_ejercicio3">Ejercicio3Activity</string>
+    <string name="title_activity_ejecicio4">Ejecicio4Activity</string>
+    <string name="txvValorConversion"><![CDATA[Valor Conversion Dolar -> Euro]]></string>
+    <string name="edtValorConversion">0.85</string>
+</resources>
