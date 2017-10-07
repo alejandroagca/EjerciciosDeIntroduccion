@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.usuario.ejerciciosdeintroduccion.Ejercicio3Activity"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
         android:orientation="horizontal"
-        android:layout_marginBottom="200dp">
+        android:id="@+id/linearLayout3">
 
         <TextView
             android:id="@+id/txvCafes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cafes"/>
+            android:text="Cafes" />
 
         <TextView
             android:id="@+id/txvContador"
@@ -27,28 +28,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="0"
-            android:textAlignment="textEnd"/>
+            android:textAlignment="textEnd" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnComenzar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.13"
-        android:text="Comenzar" />
-
-    <Button
-        android:id="@+id/btnReiniciar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contador a 0" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="290dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_alignParentStart="true">
 
         <Button
             android:id="@+id/btnMenos"
@@ -62,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="0.00"
+            android:text="0.0"
             android:textAlignment="center" />
 
         <Button
@@ -73,4 +62,29 @@
             android:text="+" />
     </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginBottom="51dp"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/btnComenzar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.13"
+            android:text="Comenzar" />
+
+        <Button
+            android:id="@+id/btnReiniciar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.13"
+            android:text="Contador a 0" />
+    </LinearLayout>
+
+</RelativeLayout>
