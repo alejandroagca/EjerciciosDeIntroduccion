@@ -10,4 +10,7 @@
     <string name="title_activity_ejecicio4">Ejecicio4Activity</string>
     <string name="txvValorConversion"><![CDATA[Valor Conversion Dolar -> Euro]]></string>
     <string name="edtValorConversion">0.85</string>
+    <string name="txvWeb">Indique un sitio web</string>
+    <string name="btnIr">Ir</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
 </resources>
