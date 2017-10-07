@@ -1,7 +1,10 @@
 package com.example.usuario.ejerciciosdeintroduccion;
 
+import android.app.AlertDialog;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,17 +15,27 @@ import android.widget.TextView;
 
 public class Ejercicio3Activity extends AppCompatActivity implements View.OnClickListener {
 
+    private MediaPlayer mp;
+    private Button reiniciar;
     private Button mas;
     private Button menos;
     private Button comenzar;
     private TextView contador;
     private TextView tiempo;
+    AlertDialog.Builder popup;
     int contadorCafes = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_ejercicio3);
+        mp = MediaPlayer.create(this,R.raw.campana);
+        popup=new AlertDialog.Builder(this);
+        popup.setTitle("FIN");
+        popup.setMessage("Has llegado a 10 cafes, que es el máximo");
+        popup.setPositiveButton("Ok", null);
         mas = (Button) findViewById(R.id.btnMas);
+        contadorCafes = 0;
+        reiniciar = (Button) findViewById(R.id.btnReiniciar);
         menos = (Button)findViewById(R.id.btnMenos);
         comenzar = (Button) findViewById(R.id.btnComenzar);
         contador = (TextView) findViewById(R.id.txvContador);
@@ -31,6 +44,7 @@ public class Ejercicio3Activity extends AppCompatActivity implements View.OnClic
         mas.setOnClickListener(this);
         menos.setOnClickListener(this);
         comenzar.setOnClickListener(this);
+        reiniciar.setOnClickListener(this);
     }
 
     @Override
@@ -52,8 +66,17 @@ public class Ejercicio3Activity extends AppCompatActivity implements View.OnClic
 
         if (view == comenzar)
         {
-            MiContador temporizador = new MiContador((long) medicion * 60 * 1000, (long)1000.0);
-            temporizador.start();
+
+            if (Integer.parseInt(contador.getText().toString()) < 10)
+            {
+                MiContador temporizador = new MiContador((long) medicion * 60 * 1000, (long) 1000.0);
+                temporizador.start();
+            }
+        }
+        if (view == reiniciar)
+        {
+            contadorCafes = 0;
+            contador.setText("0");
         }
     }
 
@@ -71,8 +94,15 @@ public class Ejercicio3Activity extends AppCompatActivity implements View.OnClic
 
         @Override
         public void onFinish()
-        {contador.setText(String.valueOf(++contadorCafes));
+        {
+            contador.setText(String.valueOf(++contadorCafes));
             tiempo.setText("0.00");
+            mp.start();
+            if (contadorCafes == 10)
+            {
+                popup.show();
+            }
+
         }
     }
 }
