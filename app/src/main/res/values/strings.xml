@@ -13,4 +13,7 @@
     <string name="txvWeb">Indique un sitio web</string>
     <string name="btnIr">Ir</string>
     <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="btnElefante">Ver elefante</string>
+    <string name="btnLeon">Ver Leon</string>
+    <string name="btnTigre">Ver Tigre</string>
 </resources>

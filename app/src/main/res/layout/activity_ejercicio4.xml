@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.usuario.ejerciciosdeintroduccion.Ejercicio4Activity">
+    tools:context="com.example.usuario.ejerciciosdeintroduccion.Ejercicio4Activity"
+    android:orientation="vertical">
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/imgAnimal"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:srcCompat="@drawable/elefante" />
+
+    <Button
+        android:id="@+id/btnElefante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnElefante" />
+
+    <Button
+        android:id="@+id/btnLeon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnLeon" />
+
+    <Button
+        android:id="@+id/btnTigre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnTigre" />
+</LinearLayout>
