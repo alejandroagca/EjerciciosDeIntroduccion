@@ -24,6 +24,7 @@ public class Ejercicio3Activity extends AppCompatActivity implements View.OnClic
     private TextView tiempo;
     AlertDialog.Builder popup;
     int contadorCafes = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

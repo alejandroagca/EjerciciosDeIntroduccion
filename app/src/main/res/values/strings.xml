@@ -16,4 +16,8 @@
     <string name="btnElefante">Ver elefante</string>
     <string name="btnLeon">Ver Leon</string>
     <string name="btnTigre">Ver Tigre</string>
+    <string name="txvMensaje">Se ha generado aleatoriamente un número entre 0 y 100</string>
+    <string name="txvIntentalo">Intenta adivinarlo:</string>
+    <string name="btnProbar">Probar</string>
+    <string name="btnNuevoNumero">Generar nuevo número aleatorio</string>
 </resources>

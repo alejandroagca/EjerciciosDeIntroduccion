@@ -5,51 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.usuario.ejerciciosdeintroduccion.Ejercicio4Activity">
-    <Button
-        android:id="@+id/btnElefante"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnElefante"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentStart="true" />
 
-    <Button
-        android:id="@+id/btnLeon"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txvMensaje"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnLeon"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:id="@+id/btnTigre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnTigre"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/elefante"
+        android:text="@string/txvMensaje"
+        android:layout_marginTop="31dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/leon"
-        android:layout_below="@+id/btnElefante"
-        android:layout_alignStart="@+id/imageView" />
+    <EditText
+        android:id="@+id/edtNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txvMensaje"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:inputType="number" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/tigre"
-        android:layout_below="@+id/btnLeon"
-        android:layout_alignStart="@+id/imageView2" />
+    <TextView
+        android:id="@+id/txvIntentalo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edtNumero"
+        android:layout_alignBottom="@+id/edtNumero"
+        android:layout_toStartOf="@+id/edtNumero"
+        android:text="@string/txvIntentalo" />
+
+    <Button
+        android:id="@+id/btnProbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtNumero"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="@string/btnProbar" />
+
+    <TextView
+        android:id="@+id/txvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnProbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp" />
+
+    <Button
+        android:id="@+id/btnNuevoNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnNuevoNumero"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="86dp" />
+
 </RelativeLayout>
