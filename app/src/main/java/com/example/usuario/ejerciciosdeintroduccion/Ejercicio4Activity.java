@@ -1,6 +1,8 @@
 package com.example.usuario.ejerciciosdeintroduccion;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,15 +16,16 @@ import android.widget.RadioButton;
 
 public class Ejercicio4Activity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView imagen;
     Button btnElefante;
     Button btnTigre;
     Button btnLeon;
+    Intent intent;
+    Bundle bundle;
+    Uri uri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicio4);
-        imagen = (ImageView) findViewById(R.id.imgAnimal);
         btnElefante = (Button)findViewById(R.id.btnElefante);
         btnTigre = (Button) findViewById(R.id.btnTigre);
         btnLeon = (Button)findViewById(R.id.btnLeon);
@@ -34,21 +37,27 @@ public class Ejercicio4Activity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v)
     {
-        Drawable drawable;
+        bundle = new Bundle();
         if (v == btnElefante)
         {
-            drawable = this.getResources().getDrawable(R.drawable.elefante);
-            imagen.setImageDrawable(drawable);
+            bundle.putInt("1",R.drawable.elefante);
+            intent = new Intent(this, ImagenActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
         if (v == btnTigre)
         {
-            drawable = this.getResources().getDrawable(R.drawable.tigre);
-            imagen.setImageDrawable(drawable);
+            bundle.putInt("1",R.drawable.tigre);
+            intent = new Intent(this, ImagenActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
         if (v==btnLeon)
         {
-            drawable = this.getResources().getDrawable(R.drawable.leon);
-            imagen.setImageDrawable(drawable);
+            bundle.putInt("1",R.drawable.leon);
+            intent = new Intent(this, ImagenActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
     }
 }
