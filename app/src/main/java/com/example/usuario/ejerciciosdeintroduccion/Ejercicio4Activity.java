@@ -45,7 +45,7 @@ public class Ejercicio4Activity extends AppCompatActivity implements View.OnClic
         mp = MediaPlayer.create(this,R.raw.acierto);
         btnGenerarNumero = (Button) findViewById(R.id.btnNuevoNumero);
         btnGenerarNumero.setOnClickListener(this);
-        alerta = Toast.makeText(this, "Para jugar de nuevo genera un nuevo número aleatorio", Toast.LENGTH_LONG);
+        btnGenerarNumero.setEnabled(false);
         GenerarNumeroAleatorio();
     }
 
@@ -54,24 +54,35 @@ public class Ejercicio4Activity extends AppCompatActivity implements View.OnClic
     {
         if (v == btnProbar)
         {
-            if (fin == false)
-            {
-                intentos++;
-                prueba = Integer.parseInt(String.valueOf(edtNumero.getText().toString()));
-                if (prueba > numero) {
-                    txvResultado.setText(String.valueOf("Prueba con un número mas pequeño"));
-                } else if (prueba < numero) {
-                    txvResultado.setText(String.valueOf("Prueba con un número mas grande"));
-                } else {
-                    txvResultado.setText("Acertaste");
-                    mp.start();
-                    popup.setMessage("¡Acertaste en " + intentos + " intentos!");
-                    popup.show();
-                    fin = true;
-                }
-            }
-            else
+                try
                 {
+                    prueba = Integer.parseInt(String.valueOf(edtNumero.getText().toString()));
+                    if(prueba >= 0 && prueba <=100 )
+                    {
+                        intentos++;
+                        if (prueba > numero) {
+                            txvResultado.setText(String.valueOf("Prueba con un número mas pequeño"));
+                        } else if (prueba < numero) {
+                            txvResultado.setText(String.valueOf("Prueba con un número mas grande"));
+                        } else {
+                            txvResultado.setText("Acertaste");
+                            mp.start();
+                            popup.setMessage("¡Acertaste en " + intentos + " intentos!");
+                            popup.show();
+                            fin = true;
+                            btnGenerarNumero.setEnabled(true);
+                            btnProbar.setEnabled(false);
+                        }
+                    }
+                    else
+                    {
+                        alerta = Toast.makeText(this, "Debes introducir un número entre 0 y 100", Toast.LENGTH_LONG);
+                        alerta.show();
+                    }
+                }
+                catch (NumberFormatException e)
+                {
+                    alerta = Toast.makeText(this, "Has introducido un valor no valido", Toast.LENGTH_LONG);
                     alerta.show();
                 }
 
@@ -83,6 +94,8 @@ public class Ejercicio4Activity extends AppCompatActivity implements View.OnClic
             fin = false;
             txvResultado.setText("");
             edtNumero.setText("");
+            btnGenerarNumero.setEnabled(false);
+            btnProbar.setEnabled(true);
         }
     }
 
